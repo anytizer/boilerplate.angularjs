@@ -1,0 +1,22 @@
+<div class="w3-container w3-teal">
+    <h1>Register</h1>
+</div>
+
+<fieldset>
+    <legend>User Registration</legend>
+    <form method="post" action="register.php" autocomplete="off">
+        <div>
+            <div>Email:</div>
+            <div>
+                <input class="w3-input" type="email" name="register[email]" ng-model="register.email" value="" placeholder="email" />
+            </div>
+        </div>
+        <div>
+            <a class="w3-btn w3-indigo" ng-click="register()">Register</a>
+            <a class="w3-btn w3-red" ui-sref="login({})">Login</a>
+        </div>
+        <div style="background-color: #DDDDDD; padding: 10px;">
+            <p><strong>Screen ID:</strong> User Registration</p>
+        </div>
+    </form>
+</fieldset>
