@@ -2,3 +2,6 @@
 {
 	.no-print { display: none!important; }
 }
+
+.gallery div { display: inline; }
+.gallery div img { height: 100px; width: 150px; padding: 5px; margin: 5px; border: 1px solid #999999; background-color: #FFFFFF; }
