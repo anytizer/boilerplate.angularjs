@@ -4,16 +4,17 @@
 
 <fieldset>
     <legend>User Registration</legend>
-    <form method="post" action="register.php" autocomplete="off">
+    <form name="registration_form" method="post" action="registration.php" autocomplete="off">
         <div>
             <div>Email:</div>
             <div>
-                <input class="w3-input" type="email" name="register[email]" ng-model="register.email" value="" placeholder="email" />
+                <input class="w3-input" type="email" name="registration[email]" ng-model="registration.email" value="" placeholder="email" required="" />
             </div>
         </div>
+		{{registration}}
         <div>
-            <a class="w3-btn w3-indigo" ng-click="register()">Register</a>
-            <a class="w3-btn w3-red" ui-sref="login({})">Login</a>
+            <a class="w3-btn w3-teal" ng-click="register(registration)">Register</a>
+            <a class="w3-btn w3-red w3-right" ui-sref="login({})">Login</a>
         </div>
         <div style="background-color: #DDDDDD; padding: 10px;">
             <p><strong>Screen ID:</strong> User Registration</p>

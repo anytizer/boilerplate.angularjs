@@ -1,5 +1,23 @@
 var myApp = angular.module("myApp", ["ui.router"]);
 
+myApp.factory("httpRequestInterceptor", function () {
+	return {
+		request: function (config) {
+
+			config.headers["Authorization"] = "Basic d2VudHdvcnRobWFuOkNoYW5nZV9tZQ==";
+			config.headers["Accept"] = "application/json;odata=verbose";
+
+			return config;
+		}
+	};
+});
+
+
+myApp.config(function ($httpProvider) {
+	$httpProvider.interceptors.push("httpRequestInterceptor");
+});
+
+
 myApp.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/home");
   
@@ -47,6 +65,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   
 });
 
+
 myApp.service("APIService", ["$http", function($http) {
 	var api = "/api";
 	return {
@@ -60,6 +79,7 @@ myApp.service("APIService", ["$http", function($http) {
 	};
 }]);
 
+
 myApp.controller("HomeController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	$scope.today = new Date();
 }]);
@@ -68,20 +88,38 @@ myApp.controller("AboutController", ["$scope", "$state", "$stateParams", "APISer
 	$scope.content = new Date();
 }]);
 
+
 myApp.controller("ProductsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	$scope.products = [
-		{"id": "1", "name": "Downloader"},
-		{"id": "2", "name": "Uploader"},
+		{"id": "1", "name": "Downloader", "link": "1.php"},
+		{"id": "2", "name": "Uploader", "link": "2.php"},
+		{"id": "3", "name": "Gallery", "link": "3.php"},
+		{"id": "4", "name": "Camera", "link": "4.php"},
 	];
 }]);
 
+
 myApp.controller("RegistrationController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	$scope.registration = {"email": "",};
+	$scope.valid = function(){
+		return false;
+	};
+	$scope.register = function(registration){
+		alert("Registering..."+registration);
+	};
 }]);
+
 
 myApp.controller("LoginController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	$scope.login = {"email": "", "password": "",};
+	$scope.valid = function(){
+		return false;
+	};
 }]);
 
+
 myApp.controller("ContactController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	// @todo Read from API
 	$scope.contact = {
 		"company": "XYZ LLC.",
 		"address": "Address",
