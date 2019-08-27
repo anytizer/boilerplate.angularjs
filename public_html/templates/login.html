@@ -1,27 +1,30 @@
-<h1>Login</h1>
+<div class="w3-container">
+    <h1>Login</h1>
+</div>
+
 
 <p>Provide your agent credentials to continue...</p>
-<fieldset>
+<fieldset style="width: 320px;">
     <legend>User Login</legend>
     <form method="post" action="login.php" autocomplete="off">
         <div>
             <div>Username:</div>
             <div>
-                <input type="text" name="login[username]" value="" placeholder="username" />
+                <input class="w3-input" type="text" name="login[username]" value="" placeholder="username" />
             </div>
         </div>
         <div>
             <div>Password:</div>
             <div>
-                <input type="password" name="login[password]" value="" placeholder="password" />
+                <input class="w3-input" type="password" name="login[password]" value="" placeholder="password" />
             </div>
         </div>
         <div>
-            <input type="submit" name="submit" value="Login" />
-            <a href="register.php">Register</a>
+            <input class="w3-btn w3-indigo" type="submit" name="submit" value="Login" />
+            <a class="w3-btn w3-indigo" href="register.php">Register</a>
         </div>
         <div style="background-color: #DDDDDD; padding: 10px;">
-            <p>Screen ID: User Login</p>
+            <p><strong>Screen ID:</strong> User Login</p>
         </div>
     </form>
 </fieldset>
