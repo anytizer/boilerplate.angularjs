@@ -1,1 +1,4 @@
-﻿menus .active { color: red; font-weight: bold; }
+﻿@media print
+{
+	.no-print { display: none!important; }
+}
