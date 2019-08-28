@@ -2,12 +2,13 @@
     <h1>Contact Us</h1>
 </div>
 
-<p><strong>Company Name:</strong> {{contact.company}}</p>
-<p><strong>Address:</strong> {{contact.address}}</p>
-<p><strong>Phone:</strong> {{contact.phone}}</p>
-<p><strong>Fax:</strong> {{contact.fax}}</p>
+<p><strong>Company Name:</strong> {{info.company}}</p>
+<p><strong>Address:</strong> {{info.address}}</p>
+<p><strong>Phone:</strong> {{info.phone}}</p>
+<p><strong>Fax:</strong> {{info.fax}}</p>
 
-<div class="w3-card-4">
+<form name="contact_form" method="post" action="?" class="w3-card-4">
+
 	<div class="w3-teal w3-container">
 		<p>Send a message now!</p>
 	</div>
@@ -29,7 +30,7 @@
 	<div class="w3-padding">
 		<p>Your short message:</p>
 		<div>
-			<textarea class="w3-input w3-border" style="height: 100px; resize:none" placeholder="Your short message" ng-model="form.message"></textarea>
+			<textarea class="w3-input w3-border" placeholder="Your short message" required="" ng-model="form.message"></textarea>
 		</div>
 	</div>
 	
@@ -37,10 +38,10 @@
 
 	<div class="w3-padding">
 		<div ng-hide="sent">
-			<button class="w3-btn w3-teal" ng-click="contact_now()">Contact Now</button>
+			<button class="w3-btn w3-teal" ng-click="contact()">Contact Now</button>
 		</div>
 		<div ng-show="sent" class="w3-padding w3-yellow">
 			{{response}}
 		</div>
 	</div>
-</div>
+</form>

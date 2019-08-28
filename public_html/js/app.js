@@ -4,7 +4,7 @@ myApp.factory("httpRequestInterceptor", function () {
 	return {
 		request: function (config) {
 
-			config.headers["Authorization"] = "Basic d2VudHdvcnRobWFuOkNoYW5nZV9tZQ==";
+			config.headers["X-Protection-Token"] = "49E12FA8-C92D-11E9-B654-00360FAA29CD";
 			config.headers["Accept"] = "application/json;odata=verbose";
 
 			return config;
@@ -67,12 +67,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 myApp.service("APIService", ["$http", function($http) {
-	var api = "/api";
+	var api = "./api";
 	return {
 		"save": function(data){
 			return $http({
 				method: "POST",
 				url: api+"/save",
+				data: data
+			});
+		},
+		"contact": function(data){
+			return $http({
+				method: "POST",
+				url: api+"/contact.php",
 				data: data
 			});
 		},
@@ -84,12 +91,14 @@ myApp.controller("HomeController", ["$scope", "$state", "$stateParams", "APIServ
 	$scope.today = new Date();
 }]);
 
+
 myApp.controller("AboutController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	$scope.content = new Date();
 }]);
 
 
 myApp.controller("ProductsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	// @todo Read from API
 	$scope.products = [
 		{"id": "1", "name": "Downloader", "link": "1.php"},
 		{"id": "2", "name": "Uploader", "link": "2.php"},
@@ -123,7 +132,7 @@ myApp.controller("LoginController", ["$scope", "$state", "$stateParams", "APISer
 
 myApp.controller("ContactController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	// @todo Read from API
-	$scope.contact = {
+	$scope.info = {
 		"company": "XYZ LLC.",
 		"address": "Address",
 		"phone": "000-000-0000",
@@ -136,7 +145,18 @@ myApp.controller("ContactController", ["$scope", "$state", "$stateParams", "APIS
 		"message": "",
 	};
 	
-	$scope.contact_now = function(){
-		alert("Sending information...");
+	$scope.contact = function(){
+		APIService.contact($scope.form).then(function(response){
+			alert("Contacted successfully");
+			$scope.form = {
+				"fullname": "",
+				"method": "",
+				"message": "",
+			};
+		}, function(error){
+			alert("Error: "+error);
+		});
+		
+		return false;
 	};
 }]);
