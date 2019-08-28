@@ -6,3 +6,43 @@
 <p><strong>Address:</strong> {{contact.address}}</p>
 <p><strong>Phone:</strong> {{contact.phone}}</p>
 <p><strong>Fax:</strong> {{contact.fax}}</p>
+
+<div class="w3-card-4">
+	<div class="w3-teal w3-container">
+		<p>Send message now!</p>
+	</div>
+
+	<div class="w3-padding">
+		<p>Your full name:</p>
+		<div>
+			<input class="w3-input w3-border" type="text" placeholder="Full Name" required="" ng-model="form.fullname" />
+		</div>
+	</div>
+	
+	<div class="w3-padding">
+		<p>Phone number or email address:</p>
+		<div>
+			<input class="w3-input w3-border" type="text" placeholder="Email or Phone" required="" ng-model="form.method" />
+		</div>
+	</div>
+	
+	<div class="w3-padding">
+		<p>Your short message:</p>
+		<div>
+			<textarea class="w3-input w3-border" style="height: 100px; resize:none" placeholder="Message" ng-model="form.message"></textarea>
+		</div>
+	</div>
+	
+	{{form}}
+
+	<div class="w3-padding">
+		<div ng-hide="sent">
+			<button class="w3-btn w3-teal" ng-click="contact_now()">Contact Now</button>
+		</div>
+		<div ng-show="sent" class="w3-padding w3-yellow">
+			{{response}}
+		</div>
+	</div>
+</div>
+
+<div ui-view=""></div>

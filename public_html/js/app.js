@@ -126,4 +126,14 @@ myApp.controller("ContactController", ["$scope", "$state", "$stateParams", "APIS
 		"phone": "000-000-0000",
 		"fax": "000-000-0000",
 	};
+	
+	$scope.form = {
+		"fullname": "",
+		"method": "",
+		"message": "",
+	};
+	
+	$scope.contact_now = function(){
+		alert("Sending information...");
+	};
 }]);
