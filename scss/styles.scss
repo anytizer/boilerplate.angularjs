@@ -13,12 +13,19 @@
 {
 	div {
 		display: inline;
+		
 		img {
 			height: 100px;
 			width: 150px;
 			padding: 5px;
 			margin: 5px;
 			border: 2px solid #009587;
-			background-color: #FFFFFF; }
+			background-color: #FFFFFF;
+		}
 	}
 }
+
+/**
+ * Contact
+ */
+textarea { height: 100px; resize:none; }
