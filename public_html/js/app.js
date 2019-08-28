@@ -45,14 +45,14 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     name: "products.list",
     url: "/list",
     templateUrl: "templates/products-list.html",
-	controller: "ProductsController",
+	controller: "ProductsListController",
   });
   
   $stateProvider.state({
     name: "products.details",
-    url: "/details",
+    url: "/details/:id",
     templateUrl: "templates/products-details.html",
-	controller: "ProductsController",
+	controller: "ProductsDetailsController",
   });
   
   $stateProvider.state({
@@ -82,10 +82,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 myApp.service("APIService", ["$http", function($http) {
 	var api = "./api";
 	return {
-		"save": function(data){
+		"products": function(data){
 			return $http({
 				method: "POST",
-				url: api+"/save",
+				url: api+"/products.php",
 				data: data
 			});
 		},
@@ -109,14 +109,24 @@ myApp.controller("AboutController", ["$scope", "$state", "$stateParams", "APISer
 }]);
 
 
-myApp.controller("ProductsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+myApp.controller("ProductsListController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	// @todo Read from API
-	$scope.products = [
-		{"id": "1", "name": "Downloader", "link": "1.php"},
-		{"id": "2", "name": "Uploader", "link": "2.php"},
-		{"id": "3", "name": "Gallery", "link": "3.php"},
-		{"id": "4", "name": "Camera", "link": "4.php"},
-	];
+	$scope.products = [];
+	$scope.products_list = function(){
+		APIService.products()
+		.then(function(response){
+			$scope.products = response.data;
+		}, function(error){
+			alert("Error: "+error);
+		});
+	};
+	
+	$scope.products_list();
+}]);
+
+
+myApp.controller("ProductsDetailsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	alert("Getting details of: "+$stateParams.id);
 }]);
 
 
