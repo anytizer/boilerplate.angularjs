@@ -3,7 +3,7 @@
 </div>
 
 <fieldset>
-    <legend>User Registration</legend>
+    <legend><p><strong>Screen ID:</strong> User Registration</p></legend>
     <form name="registration_form" method="post" action="registration.php" autocomplete="off">
         <div>
             <div>Email:</div>
@@ -14,10 +14,7 @@
 		{{registration}}
         <div>
             <a class="w3-btn w3-teal" ng-click="register(registration)">Register</a>
-            <a class="w3-btn w3-red w3-right" ui-sref="login({})">Login</a>
-        </div>
-        <div style="background-color: #DDDDDD; padding: 10px;">
-            <p><strong>Screen ID:</strong> User Registration</p>
+            <a ui-sref="login({})">Login</a>
         </div>
     </form>
 </fieldset>
