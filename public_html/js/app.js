@@ -126,7 +126,8 @@ myApp.controller("ProductsListController", ["$scope", "$state", "$stateParams", 
 
 
 myApp.controller("ProductsDetailsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
-	alert("Getting details of: "+$stateParams.id);
+	//alert("Getting details of: "+$stateParams.id);
+	$scope.id = $stateParams.id;
 }]);
 
 
