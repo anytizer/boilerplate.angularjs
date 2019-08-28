@@ -39,6 +39,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     name: "products",
     url: "/products",
     templateUrl: "templates/products.html",
+  });
+  
+  $stateProvider.state({
+    name: "products.list",
+    url: "/list",
+    templateUrl: "templates/products-list.html",
+	controller: "ProductsController",
+  });
+  
+  $stateProvider.state({
+    name: "products.details",
+    url: "/details",
+    templateUrl: "templates/products-details.html",
 	controller: "ProductsController",
   });
   
