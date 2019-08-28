@@ -111,9 +111,12 @@ myApp.controller("RegistrationController", ["$scope", "$state", "$stateParams", 
 
 
 myApp.controller("LoginController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
-	$scope.login = {"email": "", "password": "",};
+	$scope.credentials = {"email": "", "password": "",};
 	$scope.valid = function(){
 		return false;
+	};
+	$scope.login = function(){
+		alert("Logging in...");
 	};
 }]);
 
