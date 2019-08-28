@@ -93,7 +93,6 @@ myApp.controller("HomeController", ["$scope", "$state", "$stateParams", "APIServ
 
 
 myApp.controller("AboutController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
-	$scope.content = new Date();
 }]);
 
 
