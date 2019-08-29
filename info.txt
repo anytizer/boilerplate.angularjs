@@ -1,1 +1,1 @@
-AngularJS samples
+Boilerplate for AngularJS
