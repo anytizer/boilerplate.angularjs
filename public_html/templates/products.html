@@ -2,7 +2,10 @@
     <h1>Products</h1>
 </div>
 
-<p><a ui-sref="products.list({})">List</a></p>
+<div class="w3-teal w3-bottombar w3-border-blue no-print">
+	<a class="w3-btn" ui-sref="products.list({})" ui-sref-active="w3-blue">List</a>
+	<a class="w3-btn" ui-sref="products.add({})" ui-sref-active="w3-blue">Add</a>
+</div>
 
 <ui-view></ui-view>
 

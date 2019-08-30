@@ -39,6 +39,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     name: "products",
     url: "/products",
     templateUrl: "templates/products.html",
+	controller: function($state){$state.go(".list");},
   });
   
   $stateProvider.state({
@@ -53,6 +54,13 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     url: "/details/:id",
     templateUrl: "templates/products-details.html",
 	controller: "ProductsDetailsController",
+  });
+  
+  $stateProvider.state({
+    name: "products.add",
+    url: "/add",
+    templateUrl: "templates/products-add.html",
+	controller: "ProductsAddController",
   });
   
   $stateProvider.state({
@@ -86,6 +94,13 @@ myApp.service("APIService", ["$http", function($http) {
 			return $http({
 				method: "POST",
 				url: api+"/products.php",
+				data: data
+			});
+		},
+		"products_add": function(data){
+			return $http({
+				method: "POST",
+				url: api+"/products-add.php",
 				data: data
 			});
 		},
@@ -128,6 +143,23 @@ myApp.controller("ProductsListController", ["$scope", "$state", "$stateParams", 
 myApp.controller("ProductsDetailsController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
 	//alert("Getting details of: "+$stateParams.id);
 	$scope.id = $stateParams.id;
+}]);
+
+
+myApp.controller("ProductsAddController", ["$scope", "$state", "$stateParams", "APIService", function($scope, $state, $stateParams, APIService) {
+	$scope.product = {};
+	$scope.add = function(){
+		APIService.products_add($scope.product)
+		.then(function(response){
+			alert("Added successfully");
+			$scope.product = {};
+		}, function(error){
+			alert("Error saving product");
+			console.log(error);
+		});
+		
+		return false;
+	};
 }]);
 
 

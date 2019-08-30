@@ -1,0 +1,18 @@
+<h2>Add a product</h2>
+
+<fieldset>
+    <legend><strong>Screen ID:</strong> Product Add</legend>
+    <form name="products_add_form" method="post" action="products-add.php" autocomplete="off">
+        <div class="w3-padding">
+            <p>Name:</p>
+            <div>
+                <input class="w3-input" type="text" name="product[name]" ng-model="product.name" value="" placeholder="Name" required="" />
+            </div>
+        </div>
+		{{product}}
+        <div>
+            <a class="w3-btn w3-teal" ng-click="add()">Add</a>
+            <a ui-sref="products.list({})">List</a>
+        </div>
+    </form>
+</fieldset>
