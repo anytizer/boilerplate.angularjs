@@ -5,38 +5,8 @@
 <p><strong>Today:</strong> {{today|date}}</p>
 
 <div class="gallery">
-	<!-- @todo Use API -->
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
-	<div><img src="images/blank.png" /></div>
+    <!-- @todo Use API -->
+    <div ng-repeat="gallery in galleries">
+        <img src="images/blank.png" ng-src="{{gallery.src}}" alt="{{gallery.alt}}" />
+    </div>
 </div>
