@@ -1,13 +1,15 @@
 <html>
 <head>
+	<title>Boilerplate for AngularJS</title>
+	
 	<script src="js/angularjs/angular.min.js"></script>
 	<script src="js/angularjs/angular-sanitize.min.js"></script>
 	<script src="js/ui-router/angular-ui-router.min.js"></script>
 	<script src="js/ui-router/stateEvents.min.js"></script>
 	<script src="js/app.js"></script>
 
-    <link rel="stylesheet" href="css/w3.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
 </head>
 
