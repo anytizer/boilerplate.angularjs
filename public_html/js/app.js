@@ -117,6 +117,17 @@ myApp.service("APIService", ["$http", function ($http) {
     }]);
 
 
+myApp.filter("default", function() {
+    return function(input, defaultValue="-") {
+        if (angular.isUndefined(input) || input === null || input === '') {
+            return defaultValue;
+        }
+
+        return input;
+    }
+});
+
+
 myApp.controller("HomeController", ["$scope", "$state", "$stateParams", "APIService", function ($scope, $state, $stateParams, APIService) {
         $scope.today = new Date();
         $scope.galleries = [
