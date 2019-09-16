@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/w3.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
+    <script src="https://kit.fontawesome.com/f825c3d96c.js"></script>
+
 </head>
 
 <body ng-app="myApp" class="w3-sand">
@@ -18,13 +20,14 @@
     <div>
 	
         <div class="w3-black no-print">
-            <a class="w3-btn" ui-sref="home({})" ui-sref-active="w3-teal">Home</a>
-            <a class="w3-btn" ui-sref="about({})" ui-sref-active="w3-teal">About</a>
-            <a class="w3-btn" ui-sref="products({})" ui-sref-active="w3-teal">Products</a>
-            <a class="w3-btn" ui-sref="register({})" ui-sref-active="w3-teal">Register</a>
-            <a class="w3-btn" ui-sref="login({})" ui-sref-active="w3-teal">Login</a>
-            <a class="w3-btn" ui-sref="contact({})" ui-sref-active="w3-teal">Contact Us</a>
-            <a class="w3-btn w3-right" onclick="window.print();">Print</a>
+            <a class="w3-btn" ui-sref="home({})" ui-sref-active="w3-teal"><i class="fas fa-home"></i> Home</a>
+            <a class="w3-btn" ui-sref="about({})" ui-sref-active="w3-teal"><i class="fas fa-info-circle"></i> About</a>
+            <a class="w3-btn" ui-sref="products({})" ui-sref-active="w3-teal"><i class="fas fa-dolly"></i> Products</a>
+            <a class="w3-btn" ui-sref="register({})" ui-sref-active="w3-teal"><i class="far fa-registered"></i> Register</a>
+            <a class="w3-btn" ui-sref="login({})" ui-sref-active="w3-teal"><i class="far fa-user"></i> Login</a>
+            <a class="w3-btn" ui-sref="contact({})" ui-sref-active="w3-teal"><i class="far fa-address-card"></i> Contact Us</a>
+
+            <a class="w3-btn w3-right" onclick="window.print();"><i class="fas fa-print"></i> Print</a>
         </div>
 
         <div class="w3-card-4" style="min-height: 400px;">
