@@ -8,6 +8,10 @@
 Run `compass-watch.bat` and edit `scss/*.scss` files.
 
 
+## Running
+Run index.php at public_html/
+
+
 ## Files copied from:
 * [UI Router](https://unpkg.com/browse/@uirouter/angularjs@1.0.26/release/)
 * [AngularJS](https://code.angularjs.org/1.7.9/)
