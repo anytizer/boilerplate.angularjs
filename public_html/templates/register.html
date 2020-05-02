@@ -2,19 +2,21 @@
     <h1>Register</h1>
 </div>
 
-<fieldset>
-    <legend><strong>Screen ID:</strong> User Registration</legend>
-    <form name="registration_form" method="post" action="registration.php" autocomplete="off">
-        <div class="w3-padding">
-            <p>Email:</p>
-            <div>
-                <input class="w3-input" type="email" name="registration[email]" ng-model="registration.email" value="" placeholder="email" required="" />
-            </div>
-        </div>
-		{{registration}}
-        <div>
-            <a class="w3-btn w3-teal" ng-click="register(registration)">Register</a>
-            <a ui-sref="login({})">Login</a>
-        </div>
-    </form>
-</fieldset>
+<div class="w3-padding">
+	<fieldset>
+		<legend><strong>Screen ID:</strong> User Registration</legend>
+		<form name="registration_form" method="post" action="registration.php" autocomplete="off">
+			<div class="w3-padding">
+				<p>Email:</p>
+				<div>
+					<input class="w3-input" type="email" name="registration[email]" ng-model="registration.email" value="" placeholder="email" required="" />
+				</div>
+			</div>
+			{{registration}}
+			<div>
+				<a class="w3-btn w3-teal" ng-click="register(registration)">Register</a>
+				<a ui-sref="login({})">Login</a>
+			</div>
+		</form>
+	</fieldset>
+</div>

@@ -2,11 +2,13 @@
     <h1>Products</h1>
 </div>
 
-<div class="w3-teal w3-bottombar w3-border-yellow no-print">
-	<a class="w3-btn" ui-sref="products.list({})" ui-sref-active="w3-yellow">List</a>
-	<a class="w3-btn" ui-sref="products.add({})" ui-sref-active="w3-yellow">Add</a>
-</div>
-
 <div>
-    <ui-view></ui-view>
+	<div class="w3-teal w3-bottombar w3-border-yellow no-print">
+		<a class="w3-btn" ui-sref="products.list({})" ui-sref-active="w3-yellow">List</a>
+		<a class="w3-btn" ui-sref="products.add({})" ui-sref-active="w3-yellow">Add</a>
+	</div>
+
+	<div class="w3-padding">
+		<ui-view></ui-view>
+	</div>
 </div>
